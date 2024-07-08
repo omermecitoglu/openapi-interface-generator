@@ -1,6 +1,6 @@
 {
   "name": "@omer-x/openapi-interface-generator",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "OpenAPI interface generator",
   "keywords": [
     "typescript",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@omer-x/eslint-config": "^1.0.7",
-    "@omer-x/openapi-types": "^0.1.3",
+    "@omer-x/openapi-types": "^0.2.1",
     "@types/node": "^20.14.10",
     "@types/yargs": "^17.0.32",
     "clean-webpack-plugin": "^4.0.0",
