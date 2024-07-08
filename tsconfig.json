@@ -6,7 +6,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "declaration": true,
+    "declaration": false,
     "esModuleInterop": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
@@ -20,6 +20,7 @@
     },
   },
   "include": [
+    "webpack.config.js",
     "src/**/*.ts",
   ],
   "exclude": ["node_modules"]

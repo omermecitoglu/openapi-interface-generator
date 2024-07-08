@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 const path = require("path");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -10,6 +13,7 @@ module.exports = {
   target: "node",
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.BannerPlugin({ banner: "#!/usr/bin/env -S npx tsx", raw: true }),
   ],
   module: {
     rules: [
