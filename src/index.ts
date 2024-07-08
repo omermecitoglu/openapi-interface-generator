@@ -8,14 +8,18 @@ import fetchOpenApiSpec from "./core/spec";
 
 (async () => {
   const sourceURL = await getArgument("source") ?? null;
-  if (!sourceURL) throw new Error("Source URL is not specified");
+  if (!sourceURL && !process.env.OPENAPI_SRC) {
+    throw new Error("Source URL is not specified");
+  }
 
   const outputFolder = await getArgument("output") ?? "dist";
   const outputDir = path.resolve(process.cwd(), outputFolder);
 
   const framework = await getArgument("framework") ?? null;
 
-  const spec = await fetchOpenApiSpec(sourceURL);
+  const src = sourceURL ?? process.env.OPENAPI_SRC;
+  if (!src) throw new Error("Invalid source");
+  const spec = await fetchOpenApiSpec(src);
   if (!spec.paths) throw new Error("Couldn't find any valid path");
 
   if (spec.components?.schemas) {
