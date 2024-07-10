@@ -1,6 +1,6 @@
 {
   "name": "@omer-x/openapi-interface-generator",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "OpenAPI interface generator",
   "keywords": [
     "typescript",
@@ -41,7 +41,7 @@
     "dev": "webpack build --progress --mode=development --watch"
   },
   "dependencies": {
-    "@omer-x/openapi-code-generator": "^0.2.0",
+    "@omer-x/openapi-code-generator": "^0.3.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {

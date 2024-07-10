@@ -24,7 +24,7 @@ import fetchOpenApiSpec from "./core/spec";
 
   if (spec.components?.schemas) {
     for (const [schemaName, schema] of Object.entries(spec.components.schemas)) {
-      if (schema.type !== "object") continue;
+      if (!schema.type) continue;
       const content = codegen.generateSchemaCode(schemaName, schema);
       await createFile(content, `${schemaName}.ts`, outputDir, "dist/schemas");
     }
