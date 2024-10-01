@@ -1,6 +1,6 @@
 import path from "node:path";
 import * as codegen from "@omer-x/openapi-code-generator";
-import getAppName from "./core/app";
+import getPackageMetadata from "@omer-x/package-metadata";
 import getArgument from "./core/arguments";
 import capitalize from "./core/capitalize";
 import createFile from "./core/file";
@@ -30,8 +30,7 @@ import fetchOpenApiSpec from "./core/spec";
     }
   }
 
-  const packageName = getAppName();
-  const appName = packageName.split("/").pop() ?? "unknown-service";
+  const { packageName, moduleName: appName } = getPackageMetadata();
   const serviceName = capitalize(appName.replace(/-/g, " "));
   const envName = `${appName.replace(/-/g, "_").toUpperCase()}_BASE_URL`;
 
