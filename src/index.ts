@@ -4,8 +4,8 @@ import * as codegen from "@omer-x/openapi-code-generator";
 import getPackageMetadata from "@omer-x/package-metadata";
 import { capitalCase, constantCase } from "change-case";
 import getArgument from "./core/arguments";
+import fetchOpenApiSpec from "./core/fetchOpenApiSpec";
 import createFile from "./core/file";
-import fetchOpenApiSpec from "./core/spec";
 
 (async () => {
   const sourceURL = await getArgument("source") ?? null;

@@ -1,6 +1,7 @@
 import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
-const argv = yargs
+const argv = yargs(hideBin(process.argv))
   .option("source", {
     alias: "s",
     describe: "Specify the source URL (swagger.json)",
