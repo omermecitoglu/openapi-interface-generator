@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import path from "node:path";
 import * as codegen from "@omer-x/openapi-code-generator";
 import getPackageMetadata from "@omer-x/package-metadata";
