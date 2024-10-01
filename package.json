@@ -1,6 +1,6 @@
 {
   "name": "@omer-x/openapi-interface-generator",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "OpenAPI interface generator",
   "keywords": [
     "typescript",
@@ -53,6 +53,7 @@
     "@types/node": "^22.7.4",
     "@types/yargs": "^17.0.33",
     "eslint": "^8.57.1",
+    "semantic-release": "^24.1.2",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsup": "^8.3.0",
