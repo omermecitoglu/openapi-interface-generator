@@ -1,6 +1,6 @@
-import { describe, it, expect, afterEach, jest } from "@jest/globals";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { afterEach, describe, expect, it, jest } from "@jest/globals";
 import createFile from "./file";
 
 describe("createFile", () => {
