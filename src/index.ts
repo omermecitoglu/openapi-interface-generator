@@ -21,6 +21,7 @@ import createFile from "./core/file";
   const src = sourceURL ?? process.env.OPENAPI_SRC;
   if (!src) throw new Error("Invalid source");
   const spec = await fetchOpenApiSpec(src);
+  if (!spec) return;
   if (!spec.paths) throw new Error("Couldn't find any valid path");
 
   if (spec.components?.schemas) {
