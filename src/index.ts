@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import path from "node:path";
-import * as codegen from "@omer-x/openapi-code-generator";
+import codegen from "@omer-x/openapi-code-generator";
 import getPackageMetadata from "@omer-x/package-metadata";
 import { capitalCase, constantCase } from "change-case";
 import getArgument from "./core/arguments";
