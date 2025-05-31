@@ -45,7 +45,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@omer-x/openapi-code-generator": "^0.3.2",
+    "@omer-x/openapi-code-generator": "^1.0.0",
     "@omer-x/package-metadata": "^1.0.2",
     "change-case": "^5.4.4",
     "yargs": "^17.7.2"
@@ -53,9 +53,9 @@
   "devDependencies": {
     "@omer-x/eslint-config": "^2.1.3",
     "@omer-x/openapi-types": "^1.2.0",
-    "@types/node": "^22.15.23",
+    "@types/node": "^22.15.29",
     "@types/yargs": "^17.0.33",
-    "eslint": "^9.27.0",
+    "eslint": "^9.28.0",
     "semantic-release": "^24.2.5",
     "ts-jest": "^29.3.4",
     "ts-node": "^10.9.2",
