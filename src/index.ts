@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import path from "node:path";
-import codegen from "@omer-x/openapi-code-generator";
+import { generateConfigs, generateDeclaration, generateDocumentation, generateInterface, generateSchemaCode } from "@omer-x/openapi-code-generator";
 import getPackageMetadata from "@omer-x/package-metadata";
 import { capitalCase, constantCase } from "change-case";
 import getArgument from "./core/arguments";
@@ -27,7 +27,7 @@ import createFile from "./core/file";
   if (spec.components?.schemas) {
     for (const [schemaName, schema] of Object.entries(spec.components.schemas)) {
       if (!schema.type) continue;
-      const content = codegen.generateSchemaCode(schemaName, schema);
+      const content = generateSchemaCode(schemaName, schema);
       await createFile(content, `${schemaName}.ts`, outputDir, "dist/schemas");
     }
   }
@@ -36,8 +36,8 @@ import createFile from "./core/file";
   const serviceName = capitalCase(appName);
   const envName = `${constantCase(appName)}_BASE_URL`;
 
-  await createFile(codegen.generateInterface(envName, spec.paths, framework), "index.js", outputDir, "dist");
-  await createFile(codegen.generateDeclaration(spec.paths, framework), "index.d.ts", outputDir, "dist");
-  await createFile(codegen.generateDocumentation(serviceName, packageName, envName, spec.paths), "README.md", outputDir);
-  await createFile(codegen.generateConfigs("dist", []) + "\n", "package.json", outputDir);
+  await createFile(generateInterface(envName, spec.paths, framework), "index.js", outputDir, "dist");
+  await createFile(generateDeclaration(spec.paths, framework), "index.d.ts", outputDir, "dist");
+  await createFile(generateDocumentation(serviceName, packageName, envName, spec.paths), "README.md", outputDir);
+  await createFile(generateConfigs("dist", []) + "\n", "package.json", outputDir);
 })();
